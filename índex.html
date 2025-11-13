@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10C1 Mãi Đỉnh</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ff66b3, #66ccff);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS", cursive;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 4em;
+    text-shadow: 0 0 20px #ff0080, 0 0 40px #00ffff;
+    animation: bounce 2s infinite alternate ease-in-out;
+  }
+
+  @keyframes bounce {
+    from { transform: translateY(0) rotate(-3deg); }
+    to { transform: translateY(-50px) rotate(3deg); }
+  }
+
+  .heart {
+    position: fixed;
+    font-size: 20px;
+    color: #ff3366;
+    animation: fly 5s linear infinite;
+    top: 100%;
+  }
+
+  @keyframes fly {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>💖 10C1 MÃI ĐỈNH 💖</h1>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
